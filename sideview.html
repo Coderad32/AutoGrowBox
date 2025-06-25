@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proto :|: Dapplication</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 220px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #3c1446;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            padding: 16px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .main-content {
+            margin-left: 220px;
+            padding: 0;
+        }
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+        }
+        .header .info {
+            font-size: 1rem;
+            color: #555;
+        }
+        .columns {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .column {
+            background: #fafafa;
+            border: 1px solid #030101;
+            border-radius: 6px;
+            padding: 16px;
+            flex: 1;
+            min-width: 0;
+        }
+        /* Optional: Hide third column on small screens */
+        @media (max-width: 900px) {
+            .columns {
+                flex-direction: column;
+            }
+            .column {
+                margin-bottom: 20px;
+            }
+        }
+        .footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 16px 0;
+            position: fixed;
+            left: 220px;
+            bottom: 0;
+            width: calc(100% - 220px);
+            font-size: 0.95rem;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .footer-info {
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 900px) {
+            .footer {
+                left: 0;
+                width: 100%;
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Settings</a>
+        <a href="#">Containers</a>
+        <a href="#">Logout</a>
+    </div>
+    <div class="main-content">
+        <nav style="margin-top: 12px;">
+            <div style="border: 2px solid #3c1446; border-radius: 6px; padding: 10px; display: inline-block; background: #fff;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 18px;">
+                    <li>
+                        <a href="data.html" title="Go to your dashboard" style="text-decoration: none; color: #3c1446; font-weight: bold;">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="View or edit your profile" style="text-decoration: none; color: #3c1446;">
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Check your notifications" style="text-decoration: none; color: #3c1446;">
+                            Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Get help and support" style="text-decoration: none; color: #3c1446;">
+                            Help
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header">
+            <h1>Welcome</h1>
+            <h2>Mars Preserve Climate Containers</h2>
+            <p>
+                This project is designed for individuals interested in sustainable farming using climate containers on Earth. 
+                With advanced climate control systems, these containers provide optimal growing conditions for your crops.
+            </p>
+            <p>
+                The platform helps you manage and monitor your farming activities efficiently. You can easily access features such as monitoring, settings, and support through the navigation links below.
+            </p>
+            <p>
+                The system is user-friendly and energy-efficient, allowing you to focus on farming while minimizing environmental impact.
+            </p>
+            <div class="info" style="display: flex; flex-wrap: wrap; gap: 24px;">
+                <div style="flex: 1 1 180px; min-width: 160px;">
+                    <p>User: C.J. </p>
+                    <p>Date: <span id="current-date"></span></p>
+                    <p>Status: Online Available</p>
+                    <p>Version: 1.0.0</p>
+                    <p>Last Login: 2025-01-01 12:00 PM</p>
+                    <p>Last Update: 2025-01-01 12:00 PM</p>
+                </div>
+                <div style="flex: 1 1 220px; min-width: 180px; display: flex; align-items: flex-start;">
+                    <form style="margin-top:0; width:100%;" action="/search" method="GET">
+                        <label for="search-input">Search Server JS:</label>
+                        <input type="text" id="search-input" name="query" placeholder="Search available server JS..." style="margin-left:8px; padding:4px;">
+                        <button type="submit" style="padding:4px 12px; margin-left:4px;">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h2>Support</h2>
+                    <p>For more information and to connect with the support staff / team.</p>
+                    <ul>
+                        <li>
+                            <strong>Email:</strong> <a href="mailto:support@yourcompany.com">support@yourcompany.com</a>
+                        </li>
+                        <li>
+                            <strong>Live Chat:</strong> <a href="#">Start a chat session</a>
+                    </li>
+                    <li>
+                        <strong>Help Center:</strong> <a href="#">Visit our Help Center</a>
+                    </li>
+                    <li>
+                        <strong>Phone:</strong> +1 (800) 123-4567
+                    </li>
+                </ul>
+                <h3>Support Team</h3>
+                <ul>
+                    <li>Jane Doe – Lead Support Specialist</li>
+                    <li>John Smith – Technical Support</li>
+                    <li>Emily Johnson – Customer Success</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Settings</h2>
+                <p>This section details how to change site settings.</p>
+                <form>
+                    <fieldset>
+                        <legend>Privacy Settings</legend>
+                        <label>
+                            <input type="checkbox" name="showProfile" checked>
+                            Show my profile to other users
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="shareData">
+                            Allow data sharing for analytics
+                        </label>
+                    </fieldset>
+                    <fieldset style="margin-top: 16px;">
+                        <legend>Email Preferences</legend>
+                        <label>
+                            <input type="checkbox" name="receiveEmails" checked>
+                            Receive email notifications
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="optOutEmails">
+                            Opt out of all marketing emails
+                        </label>
+                    </fieldset>
+                    <button type="submit" style="margin-top: 16px;">Save Settings</button>
+                </form>
+            </div>
+            <div class="column">
+                <h2>Setup &amp; Installation</h2>
+                <p>
+                    Follow these steps to set up and install the project:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Download:</strong> Get the latest release from the <a href="#">official download page</a>.
+                    </li>
+                    <li>
+                        <strong>Extract:</strong> Unzip the downloaded file to your preferred directory.
+                    </li>
+                    <li>
+                        <strong>Install Dependencies:</strong> Open a terminal in the project folder and run:<br>
+                        <code>npm install</code>
+                    </li>
+                    <li>
+                        <strong>Configure:</strong> Edit the <code>config.json</code> file to match your environment.
+                    </li>
+                    <li>
+                        <strong>Run the Application:</strong> Start the program with:<br>
+                        <code>npm start</code>
+                    </li>
+                </ol>
+                <p>
+                    For detailed instructions, see the <a href="#">documentation</a> or contact support if you encounter issues.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Sections -->
+    <div class="columns" style="margin-top: 0;">
+        <div class="column">
+            <h2>About</h2>
+            <p>
+            Mars Preserve is dedicated to sustainable farming using advanced climate containers. Our mission is to empower individuals and communities to grow food efficiently and responsibly.
+            </p>
+            <h3>Project Overview</h3>
+            <p>
+            The platform provides real-time monitoring, automated climate control, and analytics for container-based agriculture. It is designed for scalability, security, and ease of use.
+            </p>
+            <h3>Main Modules</h3>
+            <ul>
+            <li>
+                <strong>Monitoring:</strong> Track temperature, humidity, CO<sub>2</sub> levels, and other vital stats in real time.
+            </li>
+            <li>
+                <strong>Control:</strong> Remotely adjust climate settings, lighting, and irrigation for optimal crop growth.
+            </li>
+            <li>
+                <strong>Analytics:</strong> Visualize historical data, generate reports, and receive insights for better decision-making.
+            </li>
+            <li>
+                <strong>User Management:</strong> Manage user roles, permissions, and access to different containers.
+            </li>
+            <li>
+                <strong>Notifications:</strong> Get alerts for critical events, maintenance reminders, and system updates.
+            </li>
+            <li>
+                <strong>Support & Documentation:</strong> Access help resources, guides, and direct support from the team.
+            </li>
+            </ul>
+            <p>
+            The project is open for collaboration and welcomes feedback to improve features and usability.
+            </p>
+        </div>
+        <div class="column">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:support@marspreserve.com">support@marspreserve.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Mars Lane, Red City, Mars</p>
+            <h3>Connect with Project Owner</h3>
+            <p>
+            <a href="mailto:owner@marspreserve.com" style="color: #3c1446; font-weight: bold; text-decoration: underline;">
+                Email Project Owner
+            </a>
+            </p>
+            <p>
+            <a href="https://www.linkedin.com/in/projectowner" target="_blank" style="color: #3c1446; text-decoration: underline;">
+                LinkedIn Profile
+            </a>
+            </p>
+        </div>
+        <div class="column">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. We do not share your personal information with third parties. Please review our full privacy policy for more details.</p>
+            <h2 style="margin-top:24px;">Terms of Service</h2>
+            <p>By using this platform, you agree to our terms of service. Please read them carefully to understand your rights and responsibilities.</p>
+        </div>
+    </div>
+
+    </div>
+    
+    <input type="checkbox" id="toggle-footer" style="display:none;">
+    <label for="toggle-footer" style="position:fixed;right:24px;bottom:24px;z-index:1000;background:#3c1446;color:#fff;padding:10px 18px;border-radius:24px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);font-size:1rem;">
+        Toggle Footer
+    </label>
+    
+    <footer class="footer" id="footer-container" style="position: static; left: 0; width: 100%;">
+        <div class="footer-links">
+            <a href="#">About</a> |
+            <a href="#">Contact</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-info">
+            &copy; 2025 Mars Preserve. All rights reserved respectivly.🍊
+        </div>
+    </footer><script>
+        // Display current date in header
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
